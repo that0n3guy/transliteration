@@ -18,7 +18,7 @@ This adapts the module from https://drupal.org/project/transliteration for use w
 
 ![](https://drupal.org/files/styles/grid-3/public/images/translit_0.png?itok=CwKAPBtB)*
 
-* I use this with [Andrew Elkins Cabinet](https://github.com/andrewelkins/cabinet)
+* I use this with [Andrew Elkins's Cabinet](https://github.com/andrewelkins/cabinet)
 
 ## Quick start
 
