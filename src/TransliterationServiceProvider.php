@@ -18,7 +18,7 @@ class TransliterationServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('that0n3guy/transliteration');
+
 	}
 
 	/**
@@ -28,12 +28,11 @@ class TransliterationServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        $this->app['Transliteration'] = $this->app->share(function($app)
-        {
-            return new Transliteration;
-        });
+    $this->app->bindShared('Transliteration', function ($app) {
+      return new Transliteration();
+    });
 
-        $this->app->booting(function()
+    $this->app->booting(function()
         {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
             $loader->alias('Transliteration', 'That0n3guy\Transliteration\Facades\Transliteration');
