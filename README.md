@@ -1,4 +1,4 @@
-Transliteration - Laravel 4 text cleaning Package
+Transliteration - Laravel 4 & 5 text cleaning Package
 =====================
 
 Transliteration provides one-way string transliteration (romanization) and cleans text by replacing unwanted characters.
