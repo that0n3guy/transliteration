@@ -28,7 +28,7 @@ class TransliterationServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-    $this->app->bindShared('Transliteration', function ($app) {
+    $this->app->singleton('Transliteration', function ($app) {
       return new Transliteration();
     });
 
