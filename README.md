@@ -76,15 +76,15 @@ Route::get('/test', function(){
 This would return `testing_Japanese_Ri_Ben_Yu_`.
 
 
-## How to use with [Cabinet](https://github.com/andrewelkins/cabinet)
-
+## How to use to rename file uploads (sanitize them)
+This is an old example, but still relevant.   It uses [Cabinet](https://github.com/andrewelkins/cabinet) which I don't really recommend using anymore since there are better options.
 
 Add something like:
 
 ```php
 // if using transliteration
 if (class_exists( 'That0n3guy\Transliteration\Transliteration' )) {
-  $file->fileSystemName = Transliteration::clean_filename($file->getClientOriginalName());
+  $file->fileSystemName = Transliteration::clean_filename($file->getClientOriginalName());  // You can see I am cleaning the filename
 }
 ```
 
