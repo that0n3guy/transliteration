@@ -1,4 +1,4 @@
-Transliteration - Laravel 4 text cleaning Package
+Transliteration - Laravel 4 & 5 text cleaning Package
 =====================
 
 Transliteration provides one-way string transliteration (romanization) and cleans text by replacing unwanted characters.
@@ -76,15 +76,15 @@ Route::get('/test', function(){
 This would return `testing_Japanese_Ri_Ben_Yu_`.
 
 
-## How to use with [Cabinet](https://github.com/andrewelkins/cabinet)
-
+## How to use to rename file uploads (sanitize them)
+This is an old example, but still relevant.   It uses [Cabinet](https://github.com/andrewelkins/cabinet) which I don't really recommend using anymore since there are better options.
 
 Add something like:
 
 ```php
 // if using transliteration
 if (class_exists( 'That0n3guy\Transliteration\Transliteration' )) {
-  $file->fileSystemName = Transliteration::clean_filename($file->getClientOriginalName());
+  $file->fileSystemName = Transliteration::clean_filename($file->getClientOriginalName());  // You can see I am cleaning the filename
 }
 ```
 
@@ -124,3 +124,52 @@ public function store()
     if ( $upload->id ) {
       ...
 ```
+
+# Example how to use with octobercms
+
+* Create a plugin, for this example I'll call it `that0n3guy.drivers`.  You can see documentation here: https://octobercms.com/docs/console/scaffolding#scaffold-create-plugin
+
+* Add a bootPackages method to your `Plugin.php` as per the instructions here (copy/paste it straight from that page):
+https://luketowers.ca/blog/how-to-use-laravel-packages-in-october-cms-plugins/
+
+* Add `that0n3guy/transliteration` to your plugins composer.json file:
+```
+    "require": {
+        "that0n3guy/transliteration": "^2.0"
+    }
+```
+
+Create a config file in your plugins config folder (create this folder) just like https://luketowers.ca/blog/how-to-use-laravel-packages-in-october-cms-plugins/.   File structure example:
+
+```
+that0n3guy
+    drivers
+        config
+            config.php
+        Plugin.php
+```
+
+The config file should contain:
+```
+<?php
+use Illuminate\Support\Facades\Config;
+
+$config = [
+    // This contains the Laravel Packages that you want this plugin to utilize listed under their package identifiers
+    'packages' => [
+        'that0n3guy/transliteration'  => [
+            'providers' => [
+                '\That0n3guy\Transliteration\TransliterationServiceProvider',
+            ],
+            'aliases' => [
+                'Transliteration' => '\That0n3guy\Transliteration\Facades\Transliteration',
+            ],
+        ],
+
+    ],
+];
+
+return $config;
+```
+
+Now you can use transliteration facade anywhere in your octobercms php code (like in the docs above).
