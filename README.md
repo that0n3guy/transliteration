@@ -1,4 +1,4 @@
-Transliteration - Laravel 4 & 5 text cleaning Package
+Transliteration - Laravel 4, 5, 6, 7 & 8 text cleaning Package
 =====================
 
 Transliteration provides one-way string transliteration (romanization) and cleans text by replacing unwanted characters.
@@ -22,21 +22,19 @@ This adapts the module from https://drupal.org/project/transliteration for use w
 
 ## Quick start
 
-### Required setup
+Install the package via Composer:
 
-In the `require` key of `composer.json` file add the following
+    composer require that0n3guy/transliteration
 
-#### Laravel 5
+Depending on your version of Laravel, you should install a different version of the package.
 
-    "that0n3guy/transliteration": "2.0.x"
-
-#### Laravel 4
-
-    "that0n3guy/transliteration": "1.0.x"
-
-Run the Composer update command
-
-    $ composer update
+| Laravel Version | Package Version |
+|:---------------:|:---------------:|
+|       8.0       |      ^2.0       |
+|       7.0       |      ^2.0       |
+|       6.0       |      ^2.0       |
+|       5.0       |      ^2.0       |
+|       4.0       |      ^1.0       |
 
 In your `config/app.php` add `'That0n3guy\Transliteration\TransliterationServiceProvider'` to the end of the `$providers` array
 
