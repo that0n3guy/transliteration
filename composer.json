@@ -1,3 +1,4 @@
+
 {
     "name": "that0n3guy/transliteration",
     "description": "",
@@ -9,7 +10,7 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "illuminate/support": "~5.0|~6.0"
+        "illuminate/support": "^5.0|^6.0|^7.0|^8.0"
     },
     "autoload": {
         "psr-4": {
