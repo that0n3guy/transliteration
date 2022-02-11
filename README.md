@@ -30,6 +30,7 @@ Depending on your version of Laravel, you should install a different version of 
 
 | Laravel Version | Package Version |
 |:---------------:|:---------------:|
+|       9.0       |      ^2.0       |
 |       8.0       |      ^2.0       |
 |       7.0       |      ^2.0       |
 |       6.0       |      ^2.0       |
