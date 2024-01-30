@@ -1,6 +1,7 @@
 {
     "name": "that0n3guy/transliteration",
-    "description": "",
+    "description": "Transliteration provides one-way string transliteration (romanization) and cleans text by replacing unwanted characters.",
+    "license": "MIT",
     "authors": [
         {
             "name": "Peter O",
