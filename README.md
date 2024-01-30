@@ -1,4 +1,4 @@
-Transliteration - Laravel 4, 5, 6, 7 & 8 text cleaning Package
+Transliteration - Laravel 4, 5, 6, 7, 8, 9 & 10 text cleaning Package
 =====================
 
 Transliteration provides one-way string transliteration (romanization) and cleans text by replacing unwanted characters.
@@ -30,6 +30,7 @@ Depending on your version of Laravel, you should install a different version of 
 
 | Laravel Version | Package Version |
 |:---------------:|:---------------:|
+|      10.0       |      ^2.0       |
 |       9.0       |      ^2.0       |
 |       8.0       |      ^2.0       |
 |       7.0       |      ^2.0       |
